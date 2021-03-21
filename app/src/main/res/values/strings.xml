@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Safari Booking</string>
+    <string name="s_topic">Book Your Safari</string>
+    <string-array name="s_place">
+        <item>Yala National Park</item>
+        <item>Minneriya National Park</item>
+        <item>Wilpaththuwa National Park</item>
+    </string-array>
+    <string name="v_4Seat">Number of 4 seat vehical</string>
+    <string name="v_6Seat">Number of 6 seat vehical</string>
+    <string name="v_8Seat">Number of 8 seat vehical</string>
+    <string name="s_date">12/03/2021</string>
+    <string name="s_bookingBtn">Book Now</string>
+    <string name="s_Search">Search by using order ID</string>
+    <string name="s_Searchbtn">Search</string>
+    <string name="s_place">Place :</string>
+    <string name="s_place1">Yala National Park</string>
+    <string name="s_4seat">Number of 4 seat vehical :</string>
+    <string name="s_4seat1">1</string>
+    <string name="s_6seat">Number of 6 seat vehical :</string>
+    <string name="s_6seat1">0</string>
+    <string name="s_8seat">Number of 8 seat vehical :</string>
+    <string name="s_8seat1">2</string>
+    <string name="s_delete">Cancel Booking</string>
+
+</resources>

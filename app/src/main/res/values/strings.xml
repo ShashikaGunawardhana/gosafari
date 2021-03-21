@@ -6,9 +6,9 @@
         <item>Minneriya National Park</item>
         <item>Wilpaththuwa National Park</item>
     </string-array>
-    <string name="v_4Seat">Number of 4 seat vehical</string>
-    <string name="v_6Seat">Number of 6 seat vehical</string>
-    <string name="v_8Seat">Number of 8 seat vehical</string>
+    <string name="s_4Seat">Number of 4 seat vehical</string>
+    <string name="s_6Seat">Number of 6 seat vehical</string>
+    <string name="s_8Seat">Number of 8 seat vehical</string>
     <string name="s_date">12/03/2021</string>
     <string name="s_bookingBtn">Book Now</string>
     <string name="s_Search">Search by using order ID</string>
@@ -22,5 +22,47 @@
     <string name="s_8seat">Number of 8 seat vehical :</string>
     <string name="s_8seat1">2</string>
     <string name="s_delete">Cancel Booking</string>
+    <string name="title_activity_go_safarimain">goSafarimain</string>
+    <string name="t_topic">Book Your Ticket</string>
+    <string-array name="t_place">
+        <item>Yala National Park</item>
+        <item>Wilpaththuwa National Park</item>
+        <item>Minneriya National Park</item>
+    </string-array>
+    <string-array name="t_nationalty">
+        <item>Local</item>
+        <item>Foriegn</item>
+    </string-array>
+    <string name="t_fullTicket">Full Ticket(over 15)</string>
+    <string name="t_halfTicket">Half TIcket( 5-15)</string>
+    <string name="t_date">12/03/2021</string>
+    <string name="t_booking">Book Now</string>
+    <string name="t_searchbtn">Search</string>
+    <string name="t_Search">Search by using order ID</string>
+    <string name="t_cus_name">Name :</string>
+    <string name="t_cus_place">Place :</string>
+    <string name="t_cus_nationality">Nationality :</string>
+    <string name="t_cus_fullTkt">Full Tiket  :</string>
+    <string name="t_cus_halfTkt">Half Ticket :</string>
+    <string name="t_cus_date">Date   :</string>
+    <string name="t_cus_name1">Kasun Bandara</string>
+    <string name="t_cus_place1">Yala National Park</string>
+    <string name="t_cus_nationality1">Local</string>
+    <string name="t_cus_fullTkt1">5</string>
+    <string name="t_cus_halfTkt1">2</string>
+    <string name="t_cus_date1">11/17/2021</string>
+    <string name="t_delete">Cancel Booking</string>
+    <string name="appName">goSafari</string>
+    <string name="t_tcktBookingBtn">Book Your Ticket</string>
+    <string name="s_safariBookingBtn">Book Your Safari</string>
+    <string name="t_previousTktBtn">Search Your Previous Ticket Booking</string>
+    <string name="s_previousSafaribtn">Search Your Previous Safari Booking</string>
+    <string name="feedBacktxt">We will really appreciate it if you rate us now.</string>
+    <string name="feedbackBtn">Rate Us</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+
 
 </resources>

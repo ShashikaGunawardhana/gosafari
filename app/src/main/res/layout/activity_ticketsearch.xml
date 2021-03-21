@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D4910"
+    tools:context=".ticketsearch">
+
+    <TextView
+        android:id="@+id/t_booktopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/t_topic"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/t_placeInput"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:entries="@array/t_place"
+        android:foreground="@drawable/t_input_bg"
+        android:padding="10dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_booktopic" />
+
+    <Spinner
+        android:id="@+id/t_nationalityInput"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:dropDownWidth="wrap_content"
+        android:entries="@array/t_nationalty"
+        android:foreground="@drawable/t_input_bg"
+        android:padding="10dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="@+id/t_placeInput"
+        app:layout_constraintStart_toStartOf="@+id/t_placeInput"
+        app:layout_constraintTop_toBottomOf="@+id/t_placeInput" />
+
+    <EditText
+        android:id="@+id/t_full_tkt"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/t_input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/t_fullTicket"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/t_nationalityInput"
+        app:layout_constraintStart_toStartOf="@+id/t_nationalityInput"
+        app:layout_constraintTop_toBottomOf="@+id/t_nationalityInput" />
+
+    <EditText
+        android:id="@+id/t_half_tkt"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/t_input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:text="@string/t_halfTicket"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/t_full_tkt"
+        app:layout_constraintStart_toStartOf="@+id/t_full_tkt"
+        app:layout_constraintTop_toBottomOf="@+id/t_full_tkt" />
+
+    <EditText
+        android:id="@+id/t_date"
+        style="?android:spinnerStyle"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/t_input_bg"
+        android:drawableRight="@drawable/t_ic_cal"
+        android:ems="10"
+        android:inputType="date"
+        android:padding="10dp"
+        android:text="@string/t_date"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/t_half_tkt"
+        app:layout_constraintStart_toStartOf="@+id/t_half_tkt"
+        app:layout_constraintTop_toBottomOf="@+id/t_half_tkt" />
+
+    <Button
+        android:id="@+id/t_booknwBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/t_btn_bg"
+        android:text="@string/t_booking"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/t_date"
+        app:layout_constraintStart_toStartOf="@+id/t_date"
+        app:layout_constraintTop_toBottomOf="@+id/t_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/s_safaTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/s_spinner"
+        android:id="@+id/s_placeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -33,10 +33,10 @@
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/s_safaTopic" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/s_4input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -44,14 +44,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:text="@string/v_4Seat"
+        android:text="@string/s_4Seat"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/s_spinner"
-        app:layout_constraintStart_toStartOf="@+id/s_spinner"
-        app:layout_constraintTop_toBottomOf="@+id/s_spinner" />
+        app:layout_constraintEnd_toEndOf="@+id/s_placeInput"
+        app:layout_constraintStart_toStartOf="@+id/s_placeInput"
+        app:layout_constraintTop_toBottomOf="@+id/s_placeInput" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/s_6input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -59,14 +59,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:text="@string/v_6Seat"
+        android:text="@string/s_6Seat"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintEnd_toEndOf="@+id/s_4input"
+        app:layout_constraintStart_toStartOf="@+id/s_4input"
+        app:layout_constraintTop_toBottomOf="@+id/s_4input" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/s_8input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -74,31 +74,31 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:text="@string/v_8Seat"
+        android:text="@string/s_8Seat"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/s_4input"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintStart_toStartOf="@+id/s_4input"
+        app:layout_constraintTop_toBottomOf="@+id/s_6input" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/s_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/s_input"
-        android:drawableEnd="@drawable/ic_baseline_calendar_today_24"
+        android:drawableEnd="@drawable/s_ic_baseline_calendar_today_24"
         android:ems="10"
         android:inputType="date"
         android:padding="10dp"
         android:text="@string/s_date"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintEnd_toEndOf="@+id/s_8input"
+        app:layout_constraintStart_toStartOf="@+id/s_8input"
+        app:layout_constraintTop_toBottomOf="@+id/s_8input" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/s_bookBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -108,8 +108,8 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDate"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintEnd_toEndOf="@+id/s_date"
+        app:layout_constraintStart_toStartOf="@+id/s_date"
+        app:layout_constraintTop_toBottomOf="@+id/s_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

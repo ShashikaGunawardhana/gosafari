@@ -59,6 +59,29 @@
     <string name="s_previousSafaribtn">Search Your Previous Safari Booking</string>
     <string name="feedBacktxt">We will really appreciate it if you rate us now.</string>
     <string name="feedbackBtn">Rate Us</string>
+
+
+    <string name="d_topicLogin">Login</string>
+    <string name="d_loginname">UserName</string>
+    <string name="d_loginpassword">Password</string>
+    <string name="d_c_loginpassword">Confirm Password</string>
+    <string name="d_loginfb">Facebook</string>
+    <string name="d_loginggle">Google</string>
+    <string name="d_forget">Forgot password?</string>
+    <string name="d_loginBtn">Login</string>
+    <string name="d_forgettxt">Dont have an Account?</string>
+    <string name="d_signup">Signup</string>
+    <string name="d_topicReg">Registration</string>
+    <string name="d_regBtn">Register</string>
+    <string name="d_email">Email</string>
+    <string name="d_contact">Contact Number</string>
+    <string name="d_feedback">Feedback</string>
+    <string name="d_feedbackname">Kasun Bandara</string>
+    <string name="d_cmmnt">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+    <string name="d_cmmntyou">Comment here....</string>
+    <string name="d_feebackbtn">Send Feedback</string>
+    <string name="d_delfeebackbtn">Delete Feedback</string>
+
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.

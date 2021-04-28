@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D4910"
+    tools:context=".Register">
+
+    <EditText
+        android:id="@+id/d_InputUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/d_input_bg"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/d_loginname"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d_Feedback" />
+
+    <TextView
+        android:id="@+id/d_Feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/d_topicReg"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/d_regBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/d_btn_reg"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="@string/d_regBtn"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/d_confrimpasswrd"
+        app:layout_constraintStart_toStartOf="@+id/d_confrimpasswrd"
+        app:layout_constraintTop_toBottomOf="@+id/d_confrimpasswrd" />
+
+    <EditText
+        android:id="@+id/d_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/d_input_bg"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:text="@string/d_email"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/d_InputUserName"
+        app:layout_constraintStart_toStartOf="@+id/d_InputUserName"
+        app:layout_constraintTop_toBottomOf="@+id/d_InputUserName" />
+
+    <EditText
+        android:id="@+id/d_contact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/d_input_bg"
+        android:ems="10"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:text="@string/d_contact"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/d_email"
+        app:layout_constraintStart_toStartOf="@+id/d_email"
+        app:layout_constraintTop_toBottomOf="@+id/d_email" />
+
+    <EditText
+        android:id="@+id/d_passwrd1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/d_input_bg"
+        android:ems="10"
+        android:hint="@string/d_loginpassword"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FBFBFB"
+        app:layout_constraintEnd_toEndOf="@+id/d_contact"
+        app:layout_constraintStart_toStartOf="@+id/d_contact"
+        app:layout_constraintTop_toBottomOf="@+id/d_contact" />
+
+    <EditText
+        android:id="@+id/d_confrimpasswrd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/d_input_bg"
+        android:ems="10"
+        android:hint="@string/d_c_loginpassword"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/d_passwrd1"
+        app:layout_constraintStart_toStartOf="@+id/d_passwrd1"
+        app:layout_constraintTop_toBottomOf="@+id/d_passwrd1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

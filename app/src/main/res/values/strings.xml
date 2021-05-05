@@ -82,10 +82,14 @@
     <string name="d_cmmntyou">Comment here....</string>
     <string name="d_feebackbtn">Send Feedback</string>
     <string name="d_delfeebackbtn">Delete Feedback</string>
+
     <string name="d_register">Already Registered?</string>
     <string name="d_loginhere">Login Here</string>
     <string name="logoutBtn">Logout</string>
     <string name="d_loginaddress">Email Address</string>
+
+    <string name="validation">Pleace check your Date</string>
+
 
     <!--
     This string is used for square devices and overridden by hello_world in

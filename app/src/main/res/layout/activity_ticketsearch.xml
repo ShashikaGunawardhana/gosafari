@@ -84,28 +84,11 @@
         app:layout_constraintStart_toStartOf="@+id/t_full_tkt"
         app:layout_constraintTop_toBottomOf="@+id/t_full_tkt" />
 
-    <EditText
-        android:id="@+id/t_date"
-        style="?android:spinnerStyle"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/t_input_bg"
-        android:drawableRight="@drawable/t_ic_cal"
-        android:ems="10"
-        android:inputType="date"
-        android:padding="10dp"
-        android:text="@string/t_date"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/t_half_tkt"
-        app:layout_constraintStart_toStartOf="@+id/t_half_tkt"
-        app:layout_constraintTop_toBottomOf="@+id/t_half_tkt" />
-
     <Button
         android:id="@+id/t_booknwBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/t_btn_bg"
         android:text="@string/t_booking"
         android:textColor="#000000"
@@ -114,5 +97,25 @@
         app:layout_constraintEnd_toEndOf="@+id/t_date"
         app:layout_constraintStart_toStartOf="@+id/t_date"
         app:layout_constraintTop_toBottomOf="@+id/t_date" />
+
+    <EditText
+        android:id="@+id/t_date"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/d_input_bg"
+        android:drawableRight="@drawable/s_ic_baseline_calendar_today_24"
+        android:ems="10"
+        android:inputType="date"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/t_half_tkt"
+        app:layout_constraintStart_toStartOf="@+id/t_half_tkt"
+        app:layout_constraintTop_toBottomOf="@+id/t_half_tkt"
+        tools:text="@string/t_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

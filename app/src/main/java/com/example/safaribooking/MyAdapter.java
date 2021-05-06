@@ -58,11 +58,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.halftot.setText(halftot);
         String tot = String.valueOf(member.getTotalAmount());
         holder.tot.setText(tot);
-        String norderId = String.valueOf(member.getTktKeyValue());
-        holder.orderID.setText(norderId);
+        //String norderId = String.valueOf(member.getTktKeyValue());
+        holder.orderID.setText(member.getTktKeyValue());
+        holder.userID.setText(member.getUserID());
 
 
     }
+
 
     @Override
     public int getItemCount() {
@@ -72,7 +74,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView park,customerType,full,half,fulltot,halftot,date,tot,orderID;
+        TextView park,customerType,full,half,fulltot,halftot,date,tot,orderID, userID;
         Button deleteBtn;
 
 
@@ -91,13 +93,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             date = itemView.findViewById(R.id.date_txt);
             tot = itemView.findViewById(R.id.totalAmount_txt);
             orderID = itemView.findViewById(R.id.orderID_txt);
-            deleteBtn = itemView.findViewById(R.id.heloBtn);
+            deleteBtn = itemView.findViewById(R.id.deleteSaf);
+            userID = itemView.findViewById(R.id.userID);
 
 
 
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    String useID = userID.getText().toString();
                     String park1 = park.getText().toString();
                     String type = customerType.getText().toString();
                     int fulltkt = Integer.parseInt(full.getText().toString().trim());
@@ -106,18 +110,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     double halftktAmount = Double.parseDouble(halftot.getText().toString().trim());
                     double fullAmount = Double.parseDouble(fulltot.getText().toString().trim());
                     String date1 = date.getText().toString();
-                    //String tktKeyValue = orderID.getText().toString();
-                    long tktKeyValue = Long.parseLong(orderID.getText().toString().trim());
+                    String tktKeyValue = orderID.getText().toString();
+                    //long tktKeyValue = Long.parseLong(orderID.getText().toString().trim());
 
 
 
-                    Member  delmember = new Member(tktKeyValue,park1,type,fulltkt,halftkt,date1,fulltktAmount,halftktAmount,fullAmount);
-                    DatabaseReference dbref = FirebaseDatabase.getInstance().getReference("SDK").child("ms").child("dk").child(String.valueOf(delmember.getTktKeyValue()));
+                    Member  delmember = new Member( useID,tktKeyValue,park1,type,fulltkt,halftkt,date1,fulltktAmount,halftktAmount,fullAmount);
+                    DatabaseReference dbref = FirebaseDatabase.getInstance().getReference("Order").child("TicletBooking").child(useID).child(String.valueOf(delmember.getTktKeyValue()));
+
                     Task<Void> mTsk = dbref.removeValue();
                     //Toast.makeText(context,"Remove Succesfully!",Toast.LENGTH_SHORT).show();
                     mTsk.addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
+                            context.startActivity(new Intent(context, ViewTktBooking.class).putExtra("keyuserID", useID));
                             Toast.makeText(context,"Remove Succesfully!",Toast.LENGTH_SHORT).show();
                             //showToast("Deleted Success!");
                         }

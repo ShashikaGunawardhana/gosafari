@@ -1,17 +1,24 @@
 package com.example.safaribooking;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class mainpage extends AppCompatActivity {
 
-    Button prevoioustkt,t_mainBookBtn,logout;
+    Button prevoioustkt,t_mainBookBtn,logout,safBookingbtn,safprevbtn,rateUs;
+    TextView mainemail,muserID;
+    String getmail,userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,27 +28,58 @@ public class mainpage extends AppCompatActivity {
         prevoioustkt = findViewById(R.id.t_previousTktBtn);
         t_mainBookBtn = findViewById(R.id.t_mainBookBtn);
         logout = findViewById(R.id.logoutbtn);
+        mainemail = findViewById(R.id.mainEmail);
+        muserID = findViewById(R.id.mainUserID);
+        safBookingbtn = findViewById(R.id.t_mainSafariBtn);
+        safprevbtn = findViewById(R.id.t_previousSafari);
+        rateUs = findViewById(R.id.t_ratebtn);
+        getmail = getIntent().getStringExtra("keyEmail");
+        userID = getIntent().getStringExtra("keyuserID");
+
+        mainemail.setText(getmail);
+        muserID.setText(userID);
+
+        safBookingbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mainpage.this, MainActivity.class).putExtra("keyuserID", userID).putExtra("keyEmail", getmail));
+            }
+        });
+        safprevbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mainpage.this, Safari_order.class).putExtra("keyuserID", userID));
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
 
         prevoioustkt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mainpage.this,ViewTktBooking.class));
+                startActivity(new Intent(mainpage.this, ViewTktBooking.class).putExtra("keyuserID", userID));
             }
         });
 
         t_mainBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mainpage.this,ticketsearch.class));
+                startActivity(new Intent(mainpage.this, ticketsearch.class).putExtra("keyuserID", userID).putExtra("keyEmail", getmail));
             }
         });
+        rateUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mainpage.this, Feedback.class).putExtra("keyuserID", userID).putExtra("keyEmail", getmail));
+            }
+        });
+
     }
+
 }

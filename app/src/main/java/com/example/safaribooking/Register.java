@@ -14,9 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -49,15 +52,16 @@ public class Register extends AppCompatActivity {
 
         reff = FirebaseDatabase.getInstance().getReference("User");
 
-        if(fauth.getCurrentUser() != null){
+       /* if(fauth.getCurrentUser() != null){
             //Toast.makeText(Register.this,"User Already exists!",Toast.LENGTH_LONG).show();
             startActivity(new Intent(getApplicationContext(),mainpage.class));
             finish();
-        }
+        }*/
         mloginhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Login.class));
+
             }
         });
 
@@ -109,11 +113,28 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
+                            //email verification
+                            FirebaseUser fUser = fauth.getCurrentUser();
+                            fUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(Register.this,"Verification email has been sent! ",Toast.LENGTH_LONG).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(Register.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+
                             userID = fauth.getCurrentUser().getUid();
                             UserRegister regUser = new UserRegister(name,email,password,contact,userID);
                             reff.child(String.valueOf(userID)).setValue(regUser);
                             Toast.makeText(Register.this,"User Created!",Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(),mainpage.class));
+
+                            startActivity(new Intent(getApplicationContext(),mainpage.class).putExtra("keyEmail",email).putExtra("keyuserID",userID));
+
                         }else{
 
                             Toast.makeText(Register.this,"Error! " + task.getException().getMessage(),Toast.LENGTH_LONG).show();

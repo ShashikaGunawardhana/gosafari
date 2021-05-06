@@ -3,7 +3,8 @@ package com.example.safaribooking;
 import android.widget.Button;
 
 public class Member {
-    private long tktKeyValue;
+    private String  userID;
+    private String tktKeyValue;
     private String park;
     private String customerType;
     private int fullTicket;
@@ -15,7 +16,8 @@ public class Member {
 
 
 
-    public Member(long tktKeyValue,String park, String customerType, int fullTicket, int halfTicket, String date, double fulltktAmount, double halftktAmount, double totalAmount) {
+    public Member(String  userID,String tktKeyValue,String park, String customerType, int fullTicket, int halfTicket, String date, double fulltktAmount, double halftktAmount, double totalAmount) {
+        this. userID = userID;
         this.tktKeyValue = tktKeyValue;
         this.park = park;
         this.customerType = customerType;
@@ -30,7 +32,12 @@ public class Member {
     public Member(){
 
     }
-    public long getTktKeyValue() {
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public String getTktKeyValue() {
         return tktKeyValue;
     }
 

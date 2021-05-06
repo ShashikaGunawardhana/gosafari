@@ -27,10 +27,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/d_Feedback" />
+        app:layout_constraintTop_toBottomOf="@+id/d_loginTopic" />
 
     <TextView
-        android:id="@+id/d_Feedback"
+        android:id="@+id/d_loginTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"

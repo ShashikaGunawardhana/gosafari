@@ -27,10 +27,11 @@ public class ticketsearch extends AppCompatActivity {
     EditText txtfull,txthalf,txtDate;
     Button btnBook;
     DatabaseReference reff;
-    Member member;
     long maxID = 0;
     FirebaseAuth fauth = FirebaseAuth.getInstance();
-    String userID;
+    double fulltktAmount =0 ,halftktAmount = 0,fullAmount = 0;
+
+    String userID,email;
 
 
 
@@ -44,11 +45,14 @@ public class ticketsearch extends AppCompatActivity {
         txthalf = (EditText)findViewById(R.id.t_half_tkt);
         txtDate = (EditText)findViewById(R.id.t_date);
         btnBook = (Button)findViewById(R.id.t_booknwBtn);
+        userID = getIntent().getStringExtra("keyuserID");
+        email = getIntent().getStringExtra("keyEmail");
 
 
-        reff = FirebaseDatabase.getInstance().getReference("Order").child("TicletBooking");
 
+        reff = FirebaseDatabase.getInstance().getReference("Order").child("TicletBooking").child(userID);
 
+    /*
         reff.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -63,17 +67,16 @@ public class ticketsearch extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
 
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendEmail();
                 insertData();
+
             }
         });
-
-
-
 
     }
     public void insertData(){
@@ -81,7 +84,9 @@ public class ticketsearch extends AppCompatActivity {
         String type = txttype.getSelectedItem().toString();
         int fulltkt = Integer.parseInt(txtfull.getText().toString().trim());
         int halftkt = Integer.parseInt(txthalf.getText().toString().trim());
-        double fulltktAmount,halftktAmount,fullAmount;
+
+        String id = reff.push().getKey();
+
         String date = txtDate.getText().toString();
         long tktKeyValue = maxID + 1;
 
@@ -99,9 +104,22 @@ public class ticketsearch extends AppCompatActivity {
         }
 
         userID = fauth.getCurrentUser().getUid();
-       Member member = new Member(tktKeyValue,park,type,fulltkt,halftkt,date,fulltktAmount,halftktAmount,fullAmount);
+       Member member = new Member( userID,id,park,type,fulltkt,halftkt,date,fulltktAmount,halftktAmount,fullAmount);
 
-        reff.child(String.valueOf(maxID+1)).setValue(member);
+        reff.child(id).setValue(member);
         Toast.makeText(getApplicationContext(),"Successfull",Toast.LENGTH_SHORT).show();
     }
+    public void sendEmail(){
+        String mEmail = email;
+        String park = txtpark.getSelectedItem().toString();
+        String type = txttype.getSelectedItem().toString();
+        System.out.println(mEmail);
+
+        JavaMailAPI ticketMailAPI = new JavaMailAPI(this,mEmail,park,type);
+
+
+        ticketMailAPI.execute();
+
+    }
+
 }

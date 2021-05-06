@@ -2,10 +2,21 @@ package com.example.safaribooking;
 
 public class S_model {
 
+    String userID;
     String seat4,seat6,seat8;
     String date,place;
     Double fullamount;
     int tot_vehicle;
+    String safKeyValue;
+
+
+    public String getSafKeyValue() {
+        return safKeyValue;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
 
     public String getSeat4() {
         return seat4;

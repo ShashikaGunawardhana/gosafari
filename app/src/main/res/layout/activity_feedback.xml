@@ -8,7 +8,7 @@
     tools:context=".Feedback">
 
     <TextView
-        android:id="@+id/d_Feedback"
+        android:id="@+id/d_loginTopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -38,55 +38,36 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/d_feedInput" />
 
-    <Button
-        android:id="@+id/d_deletefeed"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/d_input_bg"
-        android:text="@string/d_delfeebackbtn"
-        android:textColor="#FF0000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/d_feedInput" />
-
-    <TextView
-        android:id="@+id/d_feedname2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:text="Shashika Bandara"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/d_Feedback" />
-
     <EditText
         android:id="@+id/d_feedInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/d_cmmntyou"
         android:inputType="textMultiLine"
-        android:text="@string/d_cmmntyou"
         android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/d_feedbackBtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/d_feedname2" />
+        app:layout_constraintTop_toBottomOf="@+id/d_loginTopic" />
+
+    <ListView
+        android:id="@+id/listViewComment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/d_feedInput" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

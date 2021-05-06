@@ -1,15 +1,18 @@
 package com.example.safaribooking;
 
 public class V_Booking {
-    
+    String userID;
     String Seat4,Seat6,Seat8;
     String date,place;
     Double fullamount;
     int Tot_vehicle;
+    String safKeyValue;
     public V_Booking() {
     }
 
-    public V_Booking(String seat4, String seat6, String seat8, String date, String place, int Tot_vehicle , double fullamount ) {
+    public V_Booking(String userID,String safKeyValue, String seat4, String seat6, String seat8, String date, String place, int Tot_vehicle , double fullamount ) {
+        this.userID =userID;
+        this.safKeyValue = safKeyValue;
         Seat4 = seat4;
         Seat6 = seat6;
         Seat8 = seat8;
@@ -17,6 +20,14 @@ public class V_Booking {
         this.place = place;
         this.Tot_vehicle=Tot_vehicle;
         this.fullamount=fullamount;
+    }
+
+    public String getSafKeyValue() {
+        return safKeyValue;
+    }
+
+    public String getUserID() {
+        return userID;
     }
 
     public int getTot_vehicle() {

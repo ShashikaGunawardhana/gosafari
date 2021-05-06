@@ -27,17 +27,18 @@ public class ViewTktBooking extends AppCompatActivity {
 
     RecyclerView recyclerView;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference("Order").child("TicletBooking");
+    private DatabaseReference root ;
     private MyAdapter adapter;
     private ArrayList<Member> list;
-
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_tkt_booking);
 
-
+        userID = getIntent().getStringExtra("keyuserID");
+        root = db.getReference("Order").child("TicletBooking").child(userID);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

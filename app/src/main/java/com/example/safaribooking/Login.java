@@ -23,8 +23,9 @@ public class Login extends AppCompatActivity {
     Button loginbtn;
     EditText memail, mpassword;
     ProgressBar prologin;
-    TextView signup;
+    TextView signup,forgetpass;
     FirebaseAuth fauth = FirebaseAuth.getInstance();
+    String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,14 @@ public class Login extends AppCompatActivity {
         mpassword = findViewById(R.id.d_loginpassword);
         prologin = findViewById(R.id.progresslogin);
         signup = findViewById(R.id.d_signup_txt);
+        forgetpass = findViewById(R.id.d_forgtpass);
+
+        forgetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ForgetPassword.class));
+            }
+        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +78,10 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Login.this,"Logged in Successfully!",Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(),mainpage.class));
+                            userID = fauth.getCurrentUser().getUid();
+                            startActivity(new Intent(getApplicationContext(),mainpage.class).putExtra("keyEmail",email).putExtra("keyuserID",userID));
+
+
 
                         }else{
                             Toast.makeText(Login.this,"Error! " + task.getException().getMessage(),Toast.LENGTH_LONG).show();

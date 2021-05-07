@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background=" #00555555"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/fd_userID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="userID"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:visibility="invisible" />
 
     <LinearLayout
@@ -20,18 +22,20 @@
 
         <ImageView
             android:id="@+id/fdImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="77dp"
             android:padding="10dp"
             android:text="emailImage"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:srcCompat="@drawable/ic_emai_face" />
+            app:srcCompat="@drawable/userdp" />
 
         <TextView
             android:id="@+id/fd_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:text="email"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -42,17 +46,51 @@
         android:id="@+id/fd_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="Comment..."
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/fd_commnt_key"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="commentID"
-        android:textColor="#FFFFFF"
-        android:visibility="invisible" />
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:gravity="right"
+        android:textAlignment="gravity">
+
+        <TextView
+            android:id="@+id/fd_deleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+
+            android:textColor="#FF0000"
+            android:textColorHighlight="#0E0000"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/fd_commnt_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="commentID"
+            android:textColor="#000000"
+            android:visibility="invisible" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

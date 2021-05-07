@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D4910"
+    android:background="@drawable/background_layout"
     tools:context=".mainpage">
 
     <Button
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoutbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_saf" />
 
     <Button
         android:id="@+id/t_mainSafariBtn"
@@ -39,21 +39,6 @@
         app:layout_constraintEnd_toEndOf="@+id/t_mainBookBtn"
         app:layout_constraintStart_toStartOf="@+id/t_mainBookBtn"
         app:layout_constraintTop_toBottomOf="@+id/t_mainBookBtn" />
-
-    <TextView
-        android:id="@+id/t_appTopic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/appName"
-        android:textColor="#FFFFFF"
-        android:textSize="55sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/t_previousTktBtn"
@@ -114,39 +99,26 @@
         app:layout_constraintStart_toEndOf="@+id/t_ratetxt" />
 
     <Button
-        android:id="@+id/logoutbtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/profile_view_btn"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="#00FFFFFF"
-        android:text="@string/logoutBtn"
-        android:textColor="#FFFFFF"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_baseline_menu_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_appTopic" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/mainEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:visibility="visible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/logoutbtn"
-        app:layout_constraintEnd_toStartOf="@+id/logoutbtn"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/mainUserID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/mainEmail"
-        app:layout_constraintEnd_toStartOf="@+id/mainEmail"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ImageView
+        android:id="@+id/logo_saf"
+        android:layout_width="184dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

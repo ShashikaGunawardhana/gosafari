@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D4910"
+    android:background="@drawable/background_layout"
     tools:context=".ticketsearch">
 
     <TextView
@@ -26,9 +26,9 @@
         android:id="@+id/t_placeInput"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="30dp"
         android:entries="@array/t_place"
         android:foreground="@drawable/t_input_bg"
         android:padding="10dp"
@@ -120,16 +120,5 @@
         app:layout_constraintEnd_toEndOf="@+id/t_half_tkt"
         app:layout_constraintStart_toStartOf="@+id/t_half_tkt"
         app:layout_constraintTop_toBottomOf="@+id/t_half_tkt" />
-
-    <TextView
-        android:id="@+id/tktUserID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:textColor="#FAFAFA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_booktopic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

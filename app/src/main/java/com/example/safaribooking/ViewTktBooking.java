@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ public class ViewTktBooking extends AppCompatActivity {
     private DatabaseReference root ;
     private MyAdapter adapter;
     private ArrayList<Member> list;
-    String userID;
+    String userID,email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +39,10 @@ public class ViewTktBooking extends AppCompatActivity {
         setContentView(R.layout.activity_view_tkt_booking);
 
         userID = getIntent().getStringExtra("keyuserID");
+        email = getIntent().getStringExtra("keyEmail");
         root = db.getReference("Order").child("TicletBooking").child(userID);
         recyclerView = findViewById(R.id.recyclerView);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -65,8 +68,6 @@ public class ViewTktBooking extends AppCompatActivity {
 
             }
         });
-
-
 
 
     }

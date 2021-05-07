@@ -3,6 +3,7 @@ package com.example.safaribooking;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -38,6 +39,7 @@ public class Feedback extends AppCompatActivity {
         sendbtn = (Button)findViewById(R.id.d_feedbackBtn);
         comment = (EditText) findViewById(R.id.d_feedInput);
         listViewcomment = (ListView)findViewById(R.id.listViewComment);
+
         commentList = new ArrayList<>();
         userid = getIntent().getStringExtra("keyuserID");
         email = getIntent().getStringExtra("keyEmail");
@@ -66,7 +68,7 @@ public class Feedback extends AppCompatActivity {
                      AddComment addComment = commentSnapshot.getValue(AddComment.class);
                      commentList.add(addComment);
                 }
-                FDAdapter adapter = new FDAdapter(Feedback.this,commentList);
+                FDAdapter adapter = new FDAdapter(Feedback.this,commentList,email);
                 listViewcomment.setAdapter(adapter);
             }
 
@@ -75,6 +77,7 @@ public class Feedback extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void addComment(){
@@ -90,5 +93,8 @@ public class Feedback extends AppCompatActivity {
             comment.setError("Comment is Required!");
             return;
         }
+
     }
+
+
 }

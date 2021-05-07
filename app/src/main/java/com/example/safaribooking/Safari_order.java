@@ -1,6 +1,9 @@
 package com.example.safaribooking;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +25,10 @@ public class Safari_order extends AppCompatActivity {
 
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root;
-    String userID;
+    String userID,email;
     private S_adapter adapter;
     private ArrayList<S_model>list;
+
    // FirebaseAuth fauth;
 
     @Override
@@ -33,9 +37,11 @@ public class Safari_order extends AppCompatActivity {
         setContentView(R.layout.activity_safari_order);
        // userID = fauth.getCurrentUser().getUid();
         recyclerView=findViewById(R.id.recyclerView);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
        userID = getIntent().getStringExtra("keyuserID");
+        email = getIntent().getStringExtra("keyEmail");
         root = db.getReference("Order").child("SafariBooking").child(userID);
 
         list=new ArrayList<>();
@@ -57,5 +63,7 @@ public class Safari_order extends AppCompatActivity {
 
             }
         });
+
+
     }
 }

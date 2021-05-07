@@ -50,11 +50,7 @@ public class MainActivity extends AppCompatActivity {
         email = getIntent().getStringExtra("keyEmail");
 
 
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
-
-        awesomeValidation.addValidation(this, R.id.s_date,
-                RegexTemplate.NOT_EMPTY,R.string.validation);
 
         v_booking = new V_Booking();
 
@@ -83,14 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 userID = fauth.getCurrentUser().getUid();
                 String id = reff.push().getKey();
 
-              if(awesomeValidation.validate() ){
 
-                  Toast.makeText(getApplicationContext(), "Form validation success", Toast.LENGTH_LONG).show();
-
-              }else{
-
-                  Toast.makeText(getApplicationContext(), "Form validation Unsuccessful", Toast.LENGTH_LONG).show();
-              }
 
                 int S4 = Integer.parseInt(Seat4.getText().toString().trim());
                 int S6 = Integer.parseInt(Seat6.getText().toString().trim());

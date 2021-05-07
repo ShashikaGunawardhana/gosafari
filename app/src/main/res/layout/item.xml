@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/itemHandle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:padding="10dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="8dp">
+    card_view:cardBackgroundColor="#00555555"
+
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background=" #00555555"
             android:orientation="horizontal">
 
 
@@ -25,7 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:background=" #00555555"
                 android:text="park"
+                android:textColor="#000000"
                 android:textSize="17dp"
                 android:textStyle="bold"
                 android:visibility="invisible" />
@@ -35,13 +40,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background=" #00555555"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:background=" #00555555"
                 android:padding="5dp"
-                android:text="Park"
+                android:text="National Park"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -50,7 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:background=" #00555555"
                 android:text="park"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -64,8 +75,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="92dp"
                 android:padding="5dp"
-                android:text="Customer Type"
+                android:text="Nationality"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -73,8 +86,8 @@
                 android:id="@+id/type_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:text="type"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -88,8 +101,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="97dp"
                 android:padding="5dp"
                 android:text="Full Ticket"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -97,8 +112,8 @@
                 android:id="@+id/fulltkt_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:text="full"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -112,8 +127,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 android:padding="5dp"
                 android:text="Full Ticket Amount"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -121,8 +138,8 @@
                 android:id="@+id/fulltktAmount_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:text="fulltktamount"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -136,8 +153,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="73dp"
                 android:padding="5dp"
                 android:text="Half Ticket"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -147,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="HalfTicket"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -160,8 +180,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
                 android:padding="5dp"
                 android:text="Half Ticket Amount"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -169,8 +191,9 @@
                 android:id="@+id/halftktAmount_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="0dp"
                 android:text="halfAmount"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -184,8 +207,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="120dp"
                 android:padding="5dp"
                 android:text="Amount"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -193,8 +218,8 @@
                 android:id="@+id/totalAmount_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:text="total"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -208,8 +233,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="150dp"
                 android:padding="5dp"
                 android:text="Date"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -217,8 +244,8 @@
                 android:id="@+id/date_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:text="date"
+                android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
@@ -238,6 +265,7 @@
                 android:layout_marginStart="20dp"
                 android:padding="5dp"
                 android:text="UserID"
+                android:textColor="#000000"
                 android:textSize="17dp"
                 android:textStyle="bold"
                 android:visibility="invisible" />
@@ -252,13 +280,13 @@
                 android:id="@+id/deleteSaf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/d_input_bg"
+                android:background="@drawable/d_btn_reg"
                 android:text="@string/t_DeleteBtn"
                 android:textSize="16sp" />
 
         </LinearLayout>
 
-
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+
+</LinearLayout>

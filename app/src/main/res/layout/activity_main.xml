@@ -8,16 +8,19 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/s_safaTopic"
+        android:id="@+id/t_booktopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
         android:fontFamily="@font/aclonica"
-        android:text="@string/s_topic"
-        android:textColor="#F8F8F8"
-        android:textSize="30sp"
+        android:paddingBottom="20dp"
+        android:text="@string/t_topic"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tk_check_rate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,14 +29,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="30dp"
         android:entries="@array/s_place"
         android:foreground="@drawable/s_input"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_safaTopic" />
+        app:layout_constraintTop_toBottomOf="@+id/t_booktopic" />
 
     <EditText
         android:id="@+id/s_4input"
@@ -116,5 +120,20 @@
         app:layout_constraintEnd_toEndOf="@+id/s_date"
         app:layout_constraintStart_toStartOf="@+id/s_date"
         app:layout_constraintTop_toBottomOf="@+id/s_date" />
+    <Button
+        android:id="@+id/tk_check_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/d_input_bg"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:text="@string/Price_list"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t_booktopic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/t_booktopic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

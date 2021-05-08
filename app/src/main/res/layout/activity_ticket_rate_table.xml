@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_layout"
+    tools:context=".TicketRateTable">
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+
+        android:background="#80000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--table heading-->
+        <TableRow android:background="#33000000">
+
+            <TextView
+                android:id="@+id/tb_topic_yal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/avaialble_yal"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nationalty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_nationalty"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tab_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tab_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nati_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_local"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_yal_loc_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_yal__loc_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nati_foriegn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_foriegn"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_yal_for_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_yal_for_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="#80000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <!--table heading-->
+        <TableRow android:background="#80000000">
+
+            <TextView
+                android:id="@+id/tb_topic_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/avaialble_wil"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nationalty_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_nationalty"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tab_adult_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tab_child_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nati_loc_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_local"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_loc_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil__loc_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tab_nati_foriegn_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_foriegn"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_for_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_for_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="#80000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2">
+
+        <!--table heading-->
+        <TableRow  android:background="#80000000">
+
+            <TextView
+                android:id="@+id/tb_topic_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/avaialble_min"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nationalty_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_nationalty"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tab_adult_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tab_child_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nati_loc_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_local"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_loc_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min__loc_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tab_nati_foriegn_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_foriegn"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_for_adult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_adult"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_for_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="10sp"
+                android:text="@string/tab_child"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

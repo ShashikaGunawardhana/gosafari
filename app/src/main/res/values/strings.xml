@@ -23,7 +23,7 @@
     <string name="s_8seat1">2</string>
     <string name="s_delete">Cancel Booking</string>
     <string name="title_activity_go_safarimain">goSafarimain</string>
-    <string name="t_topic">Book Your Ticket</string>
+    <string name="t_topic">Place Your Order Here..</string>
     <string-array name="t_place">
         <item>Yala National Park</item>
         <item>Wilpaththuwa National Park</item>
@@ -33,6 +33,9 @@
         <item>Local</item>
         <item>Foriegn</item>
     </string-array>
+    <string name="avaialble_wil">Wilpaththuwa National Park</string>
+    <string name="avaialble_yal">Yala National Park</string>
+    <string name="avaialble_min">Minneriya National Park</string>
     <string name="t_fullTicket">Full Ticket(over 15)</string>
     <string name="t_halfTicket">Half TIcket( 5-15)</string>
     <string name="t_date">12/03/2021</string>
@@ -91,7 +94,12 @@
     <string name="validation">Pleace check your Date</string>
     <string name="forget_topic">Forget Password</string>
     <string name="userLogout">Logout</string>
-
+    <string name="Price_list">Check Rates</string>
+    <string name="tab_nationalty">Nationality</string>
+    <string name="tab_child">Child</string>
+    <string name="tab_adult">Adult</string>
+    <string name="tab_local">Local</string>
+    <string name="tab_foriegn">Foriegn</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

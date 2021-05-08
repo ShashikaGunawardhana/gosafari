@@ -11,14 +11,16 @@
         android:id="@+id/t_booktopic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/aclonica"
+        android:paddingBottom="20dp"
         android:text="@string/t_topic"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintEnd_toStartOf="@+id/tk_check_rate"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,15 +29,16 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="30dp"
         android:entries="@array/t_place"
         android:foreground="@drawable/t_input_bg"
         android:padding="10dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_booktopic" />
+        app:layout_constraintTop_toBottomOf="@+id/min_text" />
 
     <Spinner
         android:id="@+id/t_nationalityInput"
@@ -120,5 +123,84 @@
         app:layout_constraintEnd_toEndOf="@+id/t_half_tkt"
         app:layout_constraintStart_toStartOf="@+id/t_half_tkt"
         app:layout_constraintTop_toBottomOf="@+id/t_half_tkt" />
+
+    <Button
+        android:id="@+id/tk_check_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/d_input_bg"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:paddingStart="15dp"
+        android:paddingEnd="10dp"
+        android:text="@string/Price_list"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t_booktopic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/t_booktopic" />
+
+    <TextView
+        android:id="@+id/yala_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/avaialble_yal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_booktopic" />
+
+    <TextView
+        android:id="@+id/avail_yal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/yala_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/yala_text" />
+
+    <TextView
+        android:id="@+id/wil_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/avaialble_wil"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yala_text" />
+
+    <TextView
+        android:id="@+id/avail_wil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wil_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wil_text" />
+
+    <TextView
+        android:id="@+id/min_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/avaialble_min"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wil_text" />
+
+    <TextView
+        android:id="@+id/avail_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/min_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/min_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

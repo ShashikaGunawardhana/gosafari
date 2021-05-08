@@ -1,6 +1,7 @@
 package com.example.safaribooking;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     Spinner place;
     V_Booking v_booking;
     String userID,userid,email;
-    long maxID = 0;
     FirebaseAuth fauth = FirebaseAuth.getInstance();
     DatabaseReference reff;
+    int S4,S6,S8;
 
     AwesomeValidation awesomeValidation;
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,21 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
         reff = FirebaseDatabase.getInstance().getReference("Order").child("SafariBooking").child(userid);
 
-        /*reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-
-                    maxID = (snapshot.getChildrenCount());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
-
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
 
@@ -79,11 +65,46 @@ public class MainActivity extends AppCompatActivity {
                 userID = fauth.getCurrentUser().getUid();
                 String id = reff.push().getKey();
 
+                String num4seat = Seat4.getText().toString().trim();
+                String num6seat = Seat6.getText().toString().trim();
+                String num8seat = Seat8.getText().toString().trim();
+                String newdate = date.getText().toString().trim();
+
+                //Validation part
+                if(TextUtils.isEmpty(num4seat) && TextUtils.isEmpty(num6seat) && TextUtils.isEmpty(num6seat)){
+                    Seat4.setError("At least one field is required!");
+                    Seat6.setError("At least one field is required!");
+                    Seat8.setError("At least one field is required!");
+                    return;
+                }
+                if(TextUtils.isEmpty(newdate)){
+                    date.setError("Date is Required!");
+                    return;
+                }
 
 
-                int S4 = Integer.parseInt(Seat4.getText().toString().trim());
+                //String value convert to
+                if(num4seat.isEmpty())
+                {
+                    S4 = 0;
+                }else{
+                    S4 = Integer.parseInt(num4seat);
+                }
+                if(num6seat.isEmpty())
+                {
+                    S6 = 0;
+                }else{
+                    S6 =Integer.parseInt(num6seat);
+                }
+                if(num8seat.isEmpty()){
+                    S6 = 0;
+                }else{
+                    S8 =Integer.parseInt(num8seat);
+                }
+
+              /*  int S4 = Integer.parseInt(Seat4.getText().toString().trim());
                 int S6 = Integer.parseInt(Seat6.getText().toString().trim());
-                int S8 = Integer.parseInt(Seat8.getText().toString().trim());
+                int S8 = Integer.parseInt(Seat8.getText().toString().trim());*/
 
                 int Tot_vehicle = S4 + S6 + S8;
 
@@ -95,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
                 String s4seat = String.valueOf(S4);
                 String s6eat = String.valueOf(S6);
                 String s8seat = String.valueOf(S8);
-                long SafKeyValue = maxID + 1;
 
-                V_Booking v_booking = new V_Booking(userid,id,s4seat, s6eat, s8seat, date.getText().toString(), place.getSelectedItem().toString(), Tot_vehicle, fullAmount);
+
+                V_Booking v_booking = new V_Booking(userid,id,s4seat, s6eat, s8seat, newdate, place.getSelectedItem().toString(), Tot_vehicle, fullAmount);
 
 
                 reff.child(id).setValue(v_booking).addOnCompleteListener(MainActivity.this, new OnCompleteListener<Void>() {

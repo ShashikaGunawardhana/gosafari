@@ -52,8 +52,6 @@ public class S_adapter extends RecyclerView.Adapter<S_adapter.MyViweHolder> {
 
         holder.park.setText(model.getPlace());
 
-
-
        // String S4= String.valueOf(model.getSeat4());
         holder.seat4.setText(model.getSeat4());
 
@@ -67,9 +65,6 @@ public class S_adapter extends RecyclerView.Adapter<S_adapter.MyViweHolder> {
         holder.total.setText(tot);
 
         holder.safID.setText(model.getUserID());
-
-
-
 
 
     }
@@ -141,8 +136,6 @@ public class S_adapter extends RecyclerView.Adapter<S_adapter.MyViweHolder> {
 
         }
     }
-
-
 
 
 

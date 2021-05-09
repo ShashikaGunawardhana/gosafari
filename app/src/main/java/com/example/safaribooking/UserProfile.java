@@ -28,6 +28,7 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+        getSupportActionBar().hide();
 
         userID = getIntent().getStringExtra("keyuserID");
         email = getIntent().getStringExtra("keyEmail");

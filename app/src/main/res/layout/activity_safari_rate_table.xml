@@ -5,22 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_layout"
-    tools:context=".TicketRateTable">
+    tools:context=".SafariRateTable">
 
 
     <TableLayout
-        android:id="@+id/tableLayout"
+        android:id="@+id/table_safari"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="40dp"
 
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:background="#80000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <!--table heading-->
         <TableRow android:background="#33000000">
@@ -31,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:text="@string/avaialble_yal"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -47,8 +46,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_nationalty"
+                android:padding="5sp"
+                android:text="@string/tb_vehicle"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -58,8 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_adult"
+                android:padding="5sp"
+                android:text="@string/tb_v_rates"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -69,8 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_child"
+                android:padding="5sp"
+                android:text="@string/tb_v_avail"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -79,33 +78,33 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/tab_nati_loc"
+                android:id="@+id/tb_yal_4_seat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_local"
+                android:padding="5sp"
+                android:text="@string/tb_v_4seat"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_yal_loc_adult"
+                android:id="@+id/tb_yal_4_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_yal__loc_child"
+                android:id="@+id/tb_yal_4_avail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -114,33 +113,68 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/tab_nati_foriegn"
+                android:id="@+id/tb_yal_6_seat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_foriegn"
+                android:padding="5sp"
+                android:text="@string/tb_v_6seat"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_yal_for_adult"
+                android:id="@+id/tb_yal_6_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_yal_for_child"
+                android:id="@+id/tb_yal_6_avail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tb_yal_8_seat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/tb_v_8seat"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_yal_8_pr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_yal_8_avail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -154,12 +188,12 @@
 
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
         android:background="#80000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+        app:layout_constraintTop_toBottomOf="@+id/table_safari">
 
         <!--table heading-->
         <TableRow android:background="#80000000">
@@ -170,7 +204,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:text="@string/avaialble_wil"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -178,73 +212,38 @@
 
         </TableRow>
 
-        <TableRow >
+        <TableRow>
 
             <TextView
-                android:id="@+id/tab_nationalty_wil"
+                android:id="@+id/tb_wil_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_nationalty"
+                android:padding="5sp"
+                android:text="@string/tb_vehicle"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tab_adult_wil"
+                android:id="@+id/tb_wil_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_adult"
+                android:padding="5sp"
+                android:text="@string/tb_v_rates"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tab_child_wil"
+                android:id="@+id/tb_wil_avail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_child"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow >
-
-            <TextView
-                android:id="@+id/tab_nati_loc_wil"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_local"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tb_wil_loc_adult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:padding="10sp"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tb_wil__loc_child"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
+                android:text="@string/tb_v_avail"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -253,33 +252,103 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/tab_nati_foriegn_wil"
+                android:id="@+id/tb_wil_4_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_foriegn"
+                android:padding="5sp"
+                android:text="@string/tb_v_4seat"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_wil_for_adult"
+                android:id="@+id/tb_wil_4_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_wil_for_child"
+                android:id="@+id/tb_wil_4_avail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tb_wil_6_v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/tb_v_6seat"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_6_pr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_6_avail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tb_wil_8_v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/tb_v_8seat"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_8_pr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_wil_8_avail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -308,7 +377,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:text="@string/avaialble_min"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -319,70 +388,35 @@
         <TableRow >
 
             <TextView
-                android:id="@+id/tab_nationalty_min"
+                android:id="@+id/tb_min_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_nationalty"
+                android:padding="5sp"
+                android:text="@string/tb_vehicle"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tab_adult_min"
+                android:id="@+id/tb_min_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_adult"
+                android:padding="5sp"
+                android:text="@string/tb_v_rates"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tab_child_min"
+                android:id="@+id/tb_min_avail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_child"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow >
-
-            <TextView
-                android:id="@+id/tab_nati_loc_min"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_local"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tb_min_loc_adult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:padding="10sp"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tb_min__loc_child"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
+                android:text="@string/tb_v_avail"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -391,33 +425,102 @@
         <TableRow >
 
             <TextView
-                android:id="@+id/tab_nati_foriegn_min"
+                android:id="@+id/tb_min_4_v"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
-                android:text="@string/tab_foriegn"
+                android:padding="5sp"
+                android:text="@string/tb_v_4seat"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_min_for_adult"
+                android:id="@+id/tb_min_4_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tb_min_for_child"
+                android:id="@+id/tb_min_4_avail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:padding="10sp"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tb_min_6_v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/tb_v_6seat"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_6_pr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_6_avail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </TableRow>
+        <TableRow >
+
+            <TextView
+                android:id="@+id/tb_min_8_v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/tb_v_6seat"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_8_pr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tb_min_8_avail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -426,10 +529,12 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="184dp"
         android:fontFamily="@font/aclonica"
         android:text="@string/price_chrt"
         android:textColor="#FFFFFF"

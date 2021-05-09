@@ -22,6 +22,7 @@ public class TicketRateTable extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_rate_table);
+        getSupportActionBar().hide();
 
         wil_loc_child = findViewById(R.id.tb_wil__loc_child);
         wil_loc_adult = findViewById(R.id.tb_wil_loc_adult);

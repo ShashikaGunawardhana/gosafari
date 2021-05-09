@@ -77,6 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/d_email"
+                android:textColor="#000000"
                 android:textSize="18sp" />
         </LinearLayout>
 
@@ -105,6 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 tools:text="@string/d_contact" />
 
@@ -135,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/userLogout"
+                android:textColor="#000000"
                 android:textSize="18sp" />
 
         </LinearLayout>

@@ -3,13 +3,17 @@ package com.example.safaribooking;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import android.widget.TextView;
@@ -25,6 +29,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 
 public class ticketsearch extends AppCompatActivity {
 
@@ -33,17 +41,17 @@ public class ticketsearch extends AppCompatActivity {
     EditText txtfull,txthalf,txtDate;
     Button btnBook,check_rates;
     DatabaseReference reff,available,dbwill,dbyala,dbmin;
-
+    Calendar myCalendar = Calendar.getInstance();
     FirebaseAuth fauth = FirebaseAuth.getInstance();
     double fulltktAmount =0 ,halftktAmount = 0,fullAmount = 0;
     String userID,email;
-    TextView yal,min,wil,wil_loc_adult,wil_loc_child,wil_for_adult,wil_for_child, yal_loc_child,
-            yal_loc_adult,yal_for_child,yal_for_adult,min_loc_child,min_loc_adult,min_for_child,min_for_adult;
+    TextView yal,min,wil;
     long yalanew,minnew,wilnew,newTickt,numberOfTkt,wil_loc_adult_price,wil_loc_child_price,wil_for_adult_price,wil_for_child_price,
             yal_loc_adult_price,yal_loc_child_price,yal_for_adult_price,yal_for_child_price, min_loc_adult_price,min_loc_child_price,min_for_adult_price,min_for_child_price;
 
     int fulltkt ;
     int halftkt;
+    ProgressBar prgbar;
 
 
 
@@ -51,6 +59,7 @@ public class ticketsearch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticketsearch);
+        getSupportActionBar().hide();
 
         //assign id's
         txtpark = (Spinner)findViewById(R.id.t_placeInput);
@@ -59,21 +68,56 @@ public class ticketsearch extends AppCompatActivity {
         txthalf = (EditText)findViewById(R.id.t_half_tkt);
         txtDate = (EditText)findViewById(R.id.t_date);
         btnBook = (Button)findViewById(R.id.t_booknwBtn);
-        check_rates = (Button)findViewById(R.id.tk_check_rate);
+        check_rates = (Button)findViewById(R.id.s_check_rate);
 
         yal = (TextView)findViewById(R.id.avail_yal);
         min = (TextView)findViewById(R.id.avail_min);
         wil = (TextView)findViewById(R.id.avail_wil);
+        prgbar = (ProgressBar) findViewById(R.id.t_order_progress);
 
         userID = getIntent().getStringExtra("keyuserID");
         email = getIntent().getStringExtra("keyEmail");
 
+        //create db connection for get the available number of ticket
         available = FirebaseDatabase.getInstance().getReference("AvailableTicket");
 
         //create database connection for the rates
         dbwill = FirebaseDatabase.getInstance().getReference("TicketRates").child("Wilpaththuwa_park");
         dbyala = FirebaseDatabase.getInstance().getReference("TicketRates").child("Yala_park");
         dbmin = FirebaseDatabase.getInstance().getReference("TicketRates").child("Minneriya_park");
+
+
+        //create date picker
+        DatePickerDialog.OnDateSetListener date = new
+                DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        myCalendar.set(Calendar.YEAR, year);
+
+                        myCalendar.set(Calendar.MONTH, month);
+                        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                        updateLabel();
+                    }
+
+
+
+                };
+
+
+        txtDate.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getAction() == MotionEvent.ACTION_DOWN) {
+                    new DatePickerDialog(ticketsearch.this, date, myCalendar
+                            .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                            myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                }
+                return false;
+            }
+        });
+
+
 
         //get value from the database
         available.addValueEventListener(new ValueEventListener() {
@@ -85,9 +129,9 @@ public class ticketsearch extends AppCompatActivity {
                 String Option2=String.valueOf(snapshot.child("WilpaththuwaPark").getValue(Long.class));
                 String Option3=String.valueOf(snapshot.child("YalaPark").getValue(Long.class));
 
-                yal.setText(Option3);
                 min.setText(Option1);
                 wil.setText(Option2);
+                yal.setText(Option3);
 
                 //COnvert  String value to the Long type
                 yalanew = Long.parseLong(Option3);
@@ -214,16 +258,19 @@ public class ticketsearch extends AppCompatActivity {
         //get current user id
         String id = reff.push().getKey();
 
-
+        //showing progress bar
+        prgbar.setVisibility(View.VISIBLE);
 
         //validation part
         if(TextUtils.isEmpty(date)){
             txtDate.setError("Date is Required!");
+            prgbar.setVisibility(View.GONE);
             return;
         }
         if(TextUtils.isEmpty(full) && TextUtils.isEmpty(half)){
             txtfull.setError("At least one field is required!");
             txthalf.setError("At least one field is required!");
+            prgbar.setVisibility(View.GONE);
             return;
         }
 
@@ -243,21 +290,24 @@ public class ticketsearch extends AppCompatActivity {
         //validation part2
         numberOfTkt = fulltkt + halftkt;
 
-        if(numberOfTkt > yalanew || numberOfTkt > wilnew || numberOfTkt > minnew)
-        {
-            txtfull.setError("Your request cannot be fulfilled.please reduce the ticket count!");
-            txthalf.setError("Your request cannot be fulfilled.please reduce the ticket count!");
-            return;
-        }
-
 
         //total amount calculation part
         if(park.equals("Wilpaththuwa National Park")){
+
+            if(numberOfTkt > wilnew )
+            {
+                txtfull.setError("Your request cannot be fulfilled.please reduce the ticket count!");
+                txthalf.setError("Your request cannot be fulfilled.please reduce the ticket count!");
+                prgbar.setVisibility(View.GONE);
+                return;
+            }
+
             if (type.equals("Foriegn"))
             {
                 fulltktAmount = fulltkt * wil_for_adult_price;
                 halftktAmount = halftkt * wil_for_child_price;
                 fullAmount = fulltktAmount + halftktAmount;
+
             }
             else
             {
@@ -266,6 +316,15 @@ public class ticketsearch extends AppCompatActivity {
                 fullAmount = fulltktAmount + halftktAmount;
             }
         }else if (park.equals("Yala National Park")){
+
+            if(numberOfTkt > yalanew )
+            {
+                txtfull.setError("Your request cannot be fulfilled.please reduce the ticket count!");
+                txthalf.setError("Your request cannot be fulfilled.please reduce the ticket count!");
+                prgbar.setVisibility(View.GONE);
+                return;
+            }
+
             if (type.equals("Foriegn"))
             {
                 fulltktAmount = fulltkt * yal_for_adult_price;
@@ -279,6 +338,15 @@ public class ticketsearch extends AppCompatActivity {
                 fullAmount = fulltktAmount + halftktAmount;
             }
         }else if(park.equals("Minneriya National Park")){
+
+            if(numberOfTkt > minnew )
+            {
+                txtfull.setError("Your request cannot be fulfilled.please reduce the ticket count!");
+                txthalf.setError("Your request cannot be fulfilled.please reduce the ticket count!");
+                prgbar.setVisibility(View.GONE);
+                return;
+            }
+
             if (type.equals("Foriegn"))
             {
                 fulltktAmount = fulltkt * min_for_adult_price;
@@ -303,9 +371,11 @@ public class ticketsearch extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"Successfull",Toast.LENGTH_SHORT).show();
+                    prgbar.setVisibility(View.GONE);
                     updateTicketData();
                 }else{
                     Toast.makeText(ticketsearch.this,"Error! " + task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                    prgbar.setVisibility(View.GONE);
                 }
 
 
@@ -363,6 +433,14 @@ public class ticketsearch extends AppCompatActivity {
 
         ticketMailAPI.execute();
 
+    }
+    private void updateLabel() {
+
+        String myFormat = "MM/dd/yy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat,
+                Locale.US);
+
+        txtDate.setText(sdf.format(myCalendar.getTime()));
     }
 
 

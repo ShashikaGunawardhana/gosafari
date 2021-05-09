@@ -38,6 +38,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().hide();
 
         //get the value and assign to the variables
         register_u = (Button)findViewById(R.id.d_regBtn);

@@ -24,6 +24,7 @@ public class mainpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
+        getSupportActionBar().hide();
 
         prevoioustkt = findViewById(R.id.t_previousTktBtn);
         t_mainBookBtn = findViewById(R.id.t_mainBookBtn);

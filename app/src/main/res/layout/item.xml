@@ -46,10 +46,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
+                android:layout_marginEnd="131dp"
                 android:background=" #00555555"
                 android:padding="5dp"
-                android:text="National Park"
+                android:text="@string/list_park"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -76,9 +76,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="92dp"
+                android:layout_marginEnd="94dp"
                 android:padding="5dp"
-                android:text="Nationality"
+                android:text="@string/list_nationality"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -103,9 +103,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="97dp"
+                android:layout_marginEnd="133dp"
                 android:padding="5dp"
-                android:text="Full Ticket"
+                android:text="@string/list_adults"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -130,9 +130,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="120dp"
                 android:padding="5dp"
-                android:text="Full Ticket Amount"
+                android:text="@string/list_amount"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -157,9 +157,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="73dp"
+                android:layout_marginEnd="96dp"
                 android:padding="5dp"
-                android:text="Half Ticket"
+                android:text="@string/list_child"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -185,9 +185,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="120dp"
                 android:padding="5dp"
-                android:text="Half Ticket Amount"
+                android:text="@string/list_amount"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -213,9 +213,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="120dp"
+                android:layout_marginEnd="70dp"
                 android:padding="5dp"
-                android:text="Amount"
+                android:text="@string/list_tot"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -240,9 +240,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="150dp"
+                android:layout_marginEnd="152dp"
                 android:padding="5dp"
-                android:text="Date"
+                android:text="@string/list_date"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -272,7 +272,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:padding="5dp"
-                android:text="UserID"
+                android:text="@string/list_u_id"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:textStyle="bold"
@@ -289,7 +289,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/d_btn_reg"
-                android:text="@string/t_DeleteBtn"
+                android:text="@string/t_delete"
 
                 android:textAlignment="center"
                 android:textColor="#000000"

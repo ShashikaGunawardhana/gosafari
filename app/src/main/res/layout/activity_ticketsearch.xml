@@ -12,24 +12,122 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/aclonica"
         android:paddingBottom="20dp"
         android:text="@string/t_topic"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tk_check_rate"
+        app:layout_constraintEnd_toStartOf="@+id/s_check_rate"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+
+        android:layout_marginEnd="40dp"
+        android:background="#80000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_booktopic">
+
+        <!--table heading-->
+
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/yala_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/avaialble_yal"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/avail_yal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/wil_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/avaialble_wil"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/avail_wil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/min_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:text="@string/avaialble_min"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/avail_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </TableRow>
+
+    </TableLayout>
 
     <Spinner
         android:id="@+id/t_placeInput"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
         android:entries="@array/t_place"
         android:foreground="@drawable/t_input_bg"
@@ -38,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/min_text" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <Spinner
         android:id="@+id/t_nationalityInput"
@@ -93,7 +191,7 @@
         android:id="@+id/t_booknwBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/t_btn_bg"
         android:text="@string/t_booking"
         android:textColor="#000000"
@@ -125,7 +223,7 @@
         app:layout_constraintTop_toBottomOf="@+id/t_half_tkt" />
 
     <Button
-        android:id="@+id/tk_check_rate"
+        android:id="@+id/s_check_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -141,66 +239,16 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/t_booktopic" />
 
-    <TextView
-        android:id="@+id/yala_text"
+    <ProgressBar
+        android:id="@+id/t_order_progress"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/avaialble_yal"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_booktopic" />
-
-    <TextView
-        android:id="@+id/avail_yal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/yala_text"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/yala_text" />
-
-    <TextView
-        android:id="@+id/wil_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/avaialble_wil"
-        android:textColor="#FFFFFF"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yala_text" />
-
-    <TextView
-        android:id="@+id/avail_wil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/wil_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/wil_text" />
-
-    <TextView
-        android:id="@+id/min_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/avaialble_min"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wil_text" />
-
-    <TextView
-        android:id="@+id/avail_min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBaseline_toBaselineOf="@+id/min_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/min_text" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

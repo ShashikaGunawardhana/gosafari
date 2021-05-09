@@ -35,6 +35,7 @@ public class Feedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+        getSupportActionBar().hide();
 
         sendbtn = (Button)findViewById(R.id.d_feedbackBtn);
         comment = (EditText) findViewById(R.id.d_feedInput);

@@ -21,7 +21,7 @@
     <string name="s_6seat1">0</string>
     <string name="s_8seat">Number of 8 seat vehical :</string>
     <string name="s_8seat1">2</string>
-    <string name="s_delete">Cancel Booking</string>
+    <string name="s_delete">Cancel Safari Booking</string>
     <string name="title_activity_go_safarimain">goSafarimain</string>
     <string name="t_topic">Place Your Order Here..</string>
     <string-array name="t_place">
@@ -36,8 +36,8 @@
     <string name="avaialble_wil">Wilpaththuwa National Park</string>
     <string name="avaialble_yal">Yala National Park</string>
     <string name="avaialble_min">Minneriya National Park</string>
-    <string name="t_fullTicket">Full Ticket(over 15)</string>
-    <string name="t_halfTicket">Half TIcket( 5-15)</string>
+    <string name="t_fullTicket">Adults(over 15)</string>
+    <string name="t_halfTicket">Children( 5-15)</string>
     <string name="t_date">12/03/2021</string>
     <string name="t_booking">Book Now</string>
     <string name="t_searchbtn">Search</string>
@@ -58,9 +58,9 @@
     <string name="appName">goSafari</string>
     <string name="t_tcktBookingBtn">Book Your Ticket</string>
     <string name="s_safariBookingBtn">Book Your Safari</string>
-    <string name="t_previousTktBtn">Search Your Previous Ticket Booking</string>
-    <string name="s_previousSafaribtn">Search Your Previous Safari Booking</string>
-    <string name="feedBacktxt">We will really appreciate it if you rate us now.</string>
+    <string name="t_previousTktBtn">Search Your Previous Ticket Bookings</string>
+    <string name="s_previousSafaribtn">Search Your Previous Safari Bookings</string>
+    <string name="feedBacktxt">We will really appreciate that if you rate us now.</string>
     <string name="feedbackBtn">Rate Us</string>
     <string name="t_DeleteBtn">Delete</string>
 
@@ -100,6 +100,25 @@
     <string name="tab_adult">Adult</string>
     <string name="tab_local">Local</string>
     <string name="tab_foriegn">Foriegn</string>
+    <string name="tb_vehicle">Vehicle</string>
+    <string name="tb_v_rates">Price</string>
+    <string name="tb_v_avail">Available</string>
+    <string name="tb_v_4seat">4 Seat</string>
+    <string name="tb_v_6seat">6 Seat</string>
+    <string name="tb_v_8seat">8 Seat</string>
+    <string name="list_park">Park</string>
+    <string name="list_nationality">Nationality</string>
+    <string name="list_adults">Adults</string>
+    <string name="list_amount">Amount</string>
+    <string name="list_child">Children</string>
+    <string name="list_tot">Total Amount</string>
+    <string name="list_date">Date</string>
+    <string name="list_4seat">4 Seat vehicles</string>
+    <string name="list_6seat">6 Seat vehicles</string>
+    <string name="list_8seat">8 Seat vehicles</string>
+    <string name="list_tot_vehi">Total Vehicles</string>
+    <string name = "list_u_id">UserID</string>
+    <string name = "price_chrt">Price Chart(LKR)</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

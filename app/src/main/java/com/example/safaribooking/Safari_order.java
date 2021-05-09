@@ -35,6 +35,8 @@ public class Safari_order extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safari_order);
+        getSupportActionBar().hide();
+
        // userID = fauth.getCurrentUser().getUid();
         recyclerView=findViewById(R.id.recyclerView);
 

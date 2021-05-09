@@ -37,6 +37,7 @@ public class ViewTktBooking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_tkt_booking);
+        getSupportActionBar().hide();
 
         userID = getIntent().getStringExtra("keyuserID");
         email = getIntent().getStringExtra("keyEmail");
